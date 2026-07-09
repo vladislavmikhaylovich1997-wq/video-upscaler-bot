@@ -1,4 +1,3 @@
-\
 import os
 import cv2
 import uuid
@@ -121,7 +120,7 @@ if __name__ == "__main__":
     logger.info("Bot started")
 
     threading.Thread(
-        target=lambda: app.run(host="0.0.0.0", port=7860),
+        target=lambda: app.run(host="0.0.0.0", port=int(os.getenv("PORT", 7860))),
         daemon=True
     ).start()
 
